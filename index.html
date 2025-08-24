@@ -169,7 +169,7 @@
             <h1>🥊 Boks Antrenman Asistanı</h1>
             <button class="menu-btn" onclick="showWorkout('combination')">Kombinasyon Çalışması</button>
             <button class="menu-btn" onclick="showWorkout('dodge')">Eskiv Çalışması</button>
-            <button class="menu-btn" onclick="showWorkout('reflex')">Refleks Çalışması</button>
+            <button class="menu-btn" onclick="showWorkout('situation')">Durumsal Çalışma</button>
         </div>
 
         <div id="workoutScreen" class="workout-screen">
@@ -250,55 +250,51 @@
 
         const dodges = {
             single: [
-                "Sağa kay", "Sola kay", "Eğil", "Geri yaslan"
+                "Sağa slip", "Sola slip", "Eğil", "Roll", "Geri yaslan"
             ],
             double: [
-                "Eğil - Sağa kay", // Eğil sonrası yan tarafa kay
-                "Eğil - Sola kay", // Eğil sonrası yan tarafa kay
-                "Sağa kay - Eğil", // Yan kay sonrası eğil
-                "Sola kay - Eğil", // Yan kay sonrası eğil
+                "Eğil - Sağa slip", // Eğil sonrası slip
+                "Eğil - Sola slip", // Eğil sonrası slip
+                "Sağa slip - Eğil", // Slip sonrası eğil
+                "Sola slip - Eğil", // Slip sonrası eğil
+                "Roll - Sağa slip", // Roll sonrası slip
+                "Roll - Sola slip", // Roll sonrası slip
                 "Geri yaslan - Eğil", // Geri yaslan sonrası eğil
-                "Eğil - Geri yaslan", // Eğil sonrası geri yaslan
-                "Sağa kay - Geri yaslan", // Kay sonrası geri yaslan
-                "Sola kay - Geri yaslan" // Kay sonrası geri yaslan
+                "Eğil - Roll" // Eğil sonrası roll
             ],
             triple: [
-                "Eğil - Sağa kay - Eğil", // Weaving hareketi
-                "Eğil - Sola kay - Eğil", // Weaving hareketi
-                "Geri yaslan - Eğil - Sağa kay", // Geri-Eğil-Kay
-                "Geri yaslan - Eğil - Sola kay", // Geri-Eğil-Kay
-                "Sağa kay - Eğil - Geri yaslan", // Kay-Eğil-Geri
-                "Sola kay - Eğil - Geri yaslan", // Kay-Eğil-Geri
-                "Eğil - Sağa kay - Geri yaslan", // Weave-Kay-Geri
-                "Eğil - Sola kay - Geri yaslan" // Weave-Kay-Geri
+                "Eğil - Sağa slip - Roll", // Eğil-Slip-Roll
+                "Eğil - Sola slip - Roll", // Eğil-Slip-Roll
+                "Roll - Sağa slip - Eğil", // Roll-Slip-Eğil
+                "Roll - Sola slip - Eğil", // Roll-Slip-Eğil
+                "Sağa slip - Roll - Sola slip", // Slip-Roll-Slip
+                "Sola slip - Roll - Sağa slip", // Slip-Roll-Slip
+                "Geri yaslan - Eğil - Roll", // Geri-Eğil-Roll
+                "Roll - Eğil - Sağa slip" // Roll-Eğil-Slip
             ]
         };
 
-        const reflexes = {
+        const situations = {
             single: [
-                "BLOK!", "KAÇ!", "KARŞILA!", "Sol Direk", "Sağ Direk", 
-                "Sol Kroşe", "Sağ Kroşe", "Sol Uppercut", "Sağ Uppercut"
+                // Durumsal komutlar
+                "Köşeye sıkıştın - Roll!", "Mesafeyi koru!", "Clinch'ten çık!", 
+                "Sıkıştın - Eğil!", "Yakın mesafe - Uppercut!", "İp kenarında - Slip!"
             ],
             double: [
-                "BLOK! - KARŞILA!", // Savun sonra saldır
-                "KAÇ! - KARŞILA!", // Kaç sonra saldır
-                "KARŞILA! - BLOK!", // Saldır sonra savun
-                "BLOK! - Sol Direk", // Savun sonra jab
-                "KAÇ! - Sağ Direk", // Kaç sonra cross
-                "KARŞILA! - KAÇ!", // Saldır sonra kaç
-                "BLOK! - Sol Kroşe", // Savun sonra hook
-                "KAÇ! - Sağ Kroşe", // Kaç sonra hook
-                "KARŞILA! - BLOK!" // Saldır sonra savun
+                // Eskiv + Vuruş kombinasyonları (slip yönüyle aynı taraf saldırı)
+                "Eğil - Sol Kroşe", "Eğil - Sağ Uppercut", "Sola slip - Sol Kroşe", 
+                "Sağa slip - Sağ Kroşe", "Roll - Sol Direk", "Geri yaslan - Sağ Direk",
+                // Durumsal çıkışlar
+                "Köşeye sıkıştın - Sola slip", "Köşeye sıkıştın - Sağa slip", "Sıkıştın - Roll"
             ],
             triple: [
-                "BLOK! - KARŞILA! - KAÇ!", // Savun-Saldır-Kaç
-                "KAÇ! - BLOK! - KARŞILA!", // Kaç-Savun-Saldır
-                "KARŞILA! - KAÇ! - BLOK!", // Saldır-Kaç-Savun
-                "BLOK! - Sol Direk - KAÇ!", // Savun-Jab-Kaç
-                "KAÇ! - Sağ Direk - BLOK!", // Kaç-Cross-Savun
-                "KARŞILA! - BLOK! - Sol Kroşe", // Saldır-Savun-Hook
-                "BLOK! - KARŞILA! - Sağ Kroşe", // Savun-Saldır-Hook
-                "KAÇ! - Sol Uppercut - BLOK!" // Kaç-Upper-Savun
+                // Eskiv + Çoklu vuruş (slip yönüyle aynı taraf saldırı)
+                "Eğil - Sol Kroşe - Sağ Direk", "Sağa slip - Sağ Kroşe - Sağ Uppercut",
+                "Sola slip - Sol Kroşe - Sol Uppercut", "Roll - Sol Uppercut - Sağ Kroşe",
+                // Durumsal çıkış kombinasyonları
+                "Köşeye sıkıştın - Sola slip - Sol Kroşe", "Köşeye sıkıştın - Sağa slip - Sağ Kroşe",
+                "Sıkıştın - Roll - Sağ Direk", "İp kenarında - Sağa slip - Sağ Kroşe",
+                "Clinch'ten çık - Eğil - Sol Uppercut"
             ]
         };
 
@@ -323,8 +319,8 @@
                 case 'dodge':
                     title = '🤺 Eskiv Çalışması';
                     break;
-                case 'reflex':
-                    title = '⚡ Refleks Çalışması';
+                case 'situation':
+                    title = '🎯 Durumsal Çalışma';
                     break;
             }
             document.getElementById('workoutTitle').textContent = title;
@@ -388,8 +384,8 @@
                 case 'dodge':
                     commandPool = dodges;
                     break;
-                case 'reflex':
-                    commandPool = reflexes;
+                case 'situation':
+                    commandPool = situations;
                     break;
                 default:
                     return '';
@@ -453,7 +449,7 @@
                 }
             }, 1000);
 
-            // Komut timer'ı
+            // Komut timer'ını başlat
             startCommandTimer();
         }
 
