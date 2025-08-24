@@ -53,15 +53,15 @@ Gerçek boks kombinasyonlarını öğrenmek ve pratik yapmak için:
 
 #### 🤺 Eskiv Çalışması  
 Savunma hareketlerini geliştirmek için:
-- **Tekli**: "Sağa kay", "Eğil", "Geri yaslan"
-- **İkili**: "Eğil - Sağa kay" (weaving), "Geri yaslan - Eğil"
-- **Üçlü**: "Eğil - Sağa kay - Eğil" (klasik weaving zinciri)
+- **Tekli**: "Sağa slip", "Eğil", "Roll", "Geri yaslan"
+- **İkili**: "Eğil - Sağa slip", "Roll - Sola slip", "Slip - Eğil"
+- **Üçlü**: "Eğil - Sağa slip - Roll", "Roll - Slip - Eğil" kombinasyonları
 
 #### 🎯 Durumsal Çalışma
 Gerçek maç durumlarında eskiv ve karşı saldırı kombinasyonları:
-- **Tekli**: "Köşeye sıkıştın - Roll!", "Sıkıştın - Eğil!", "Yakın mesafe - Uppercut!"
-- **İkili**: "Eğil - Sol Kroşe", "Sağa kay - Sol Kroşe", "Köşeye sıkıştın - Sola kay"
-- **Üçlü**: "Eğil - Sol Kroşe - Sağ Direk", "Köşeye sıkıştın - Sola kay - Roll"
+- **Tekli**: "Köşeye sıkıştın - Roll!", "Sıkıştın - Eğil!", "İp kenarında - Slip!"
+- **İkili**: "Eğil - Sol Kroşe", "Sağa slip - Sol Kroşe", "Köşeye sıkıştın - Sola slip"
+- **Üçlü**: "Eğil - Sol Kroşe - Sağ Direk", "Köşeye sıkıştın - Sola slip - Sağ Kroşe"
 
 ## 🛠️ Teknik Bilgiler
 
