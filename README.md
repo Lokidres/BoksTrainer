@@ -26,6 +26,9 @@ Modern ve kullanıcı dostu bir web tabanlı boks antrenman uygulaması. Kombina
   - 2️⃣ İkili (2'li kombinasyonlar)
   - 3️⃣ Üçlü (3'lü kombinasyonlar)
   - 🎯 Karma (Rastgele karışım)
+- **Sesli Komut**:
+  - 🔇 Sessiz (Sadece yazı)
+  - 🔊 Sesli (Komutlar sesli okunur)
 
 ### 🎨 Tasarım Özellikleri
 - Siyah-turuncu modern tema
@@ -97,6 +100,7 @@ Uygulama tüm cihazlarda mükemmel çalışır:
 - Kolsuz çantası (heavy bag) antrenmanı için kombinasyon rehberi
 - Gölge boksu (shadow boxing) için komut sistemi
 - Refleks geliştirme egzersizleri
+- **Sesli komutlarla hands-free antrenman**
 
 ### Spor Salonu
 - Antrenör yardımcısı olarak kullanım
@@ -139,6 +143,7 @@ Bu proje MIT lisansı altında yayınlanmıştır. Detaylar için `LICENSE` dosy
 - ✅ Profesyonel boks kombinasyonları
 - ✅ Responsive tasarım
 - ✅ Modern ve kullanıcı dostu arayüz
+- ✅ **Türkçe sesli komut desteği**
 
 ## 📞 İletişim
 

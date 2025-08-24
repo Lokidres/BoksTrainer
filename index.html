@@ -195,6 +195,11 @@
                 <button class="time-btn active" onclick="selectComboType('mixed')">🎯 Karma</button>
             </div>
 
+            <div class="time-selection" id="voiceSelection">
+                <button class="time-btn" onclick="toggleVoice(false)">🔇 Sessiz</button>
+                <button class="time-btn active" onclick="toggleVoice(true)">🔊 Sesli</button>
+            </div>
+
             <div id="command" class="command">Başlamaya Hazır!</div>
             <div id="timer" class="timer">00:00</div>
             <div id="status" class="status"></div>
@@ -216,6 +221,7 @@
         let selectedTime = 60;
         let selectedSpeed = 4; // Varsayılan orta seviye (4 saniye)
         let selectedComboType = 'mixed'; // Varsayılan karma
+        let voiceEnabled = true; // Varsayılan sesli
         let isRunning = false;
         let isPaused = false;
 
@@ -364,6 +370,33 @@
             event.target.classList.add('active');
         }
 
+        // Sesli komut açma/kapatma
+        function toggleVoice(enabled) {
+            voiceEnabled = enabled;
+            
+            // Aktif buton stilini güncelle
+            document.querySelectorAll('#voiceSelection .time-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Sesli okuma fonksiyonu
+        function speakCommand(text) {
+            if (!voiceEnabled || !('speechSynthesis' in window)) return;
+            
+            // Önceki konuşmayı durdur
+            speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'tr-TR'; // Türkçe
+            utterance.rate = 1.2; // Biraz hızlı
+            utterance.pitch = 1.1; // Biraz yüksek ses tonu
+            utterance.volume = 0.8; // Ses seviyesi
+            
+            speechSynthesis.speak(utterance);
+        }
+
         // Timer'ı güncelle
         function updateTimer() {
             const minutes = Math.floor(remainingTime / 60);
@@ -415,6 +448,9 @@
             setTimeout(() => {
                 commandElement.style.animation = 'pulse 0.5s ease-in-out';
             }, 10);
+            
+            // Sesli okuma
+            speakCommand(command);
         }
 
         // Antrenmanı başlat
