@@ -13,7 +13,7 @@ Modern ve kullanıcı dostu bir web tabanlı boks antrenman uygulaması. Kombina
 ### 🎯 3 Farklı Antrenman Modu
 - **Kombinasyon Çalışması**: Gerçek boks kombinasyonları (1-2, 1-2-3, Hook-Upper zincirleri)
 - **Eskiv Çalışması**: Weaving ve savunma hareketleri (Eğil, Kay, Geri yaslan)
-- **Refleks Çalışması**: Spesifik savunma-saldırı komutları (Sol Blok, Baş Aşağı, vb.)
+- **Durumsal Çalışma**: Eskiv+vuruş kombinasyonları ve durumsal çıkışlar (Eğil-Sol Kroşe, Köşeye sıkıştın-Roll)
 
 ### ⚙️ Kişiselleştirilebilir Ayarlar
 - **Süre Seçimi**: 1, 2 veya 3 dakikalık antrenman seansları
@@ -57,11 +57,11 @@ Savunma hareketlerini geliştirmek için:
 - **İkili**: "Eğil - Sağa kay" (weaving), "Geri yaslan - Eğil"
 - **Üçlü**: "Eğil - Sağa kay - Eğil" (klasik weaving zinciri)
 
-#### ⚡ Refleks Çalışması
-Hızlı karar alma ve tepki süresini geliştirmek için:
-- **Spesifik Komutlar**: "Sol Blok", "Baş Aşağı", "Geriye Çekil"
-- **Zincirleme Hareketler**: "Sol Blok - Sağ Direk", "Sağa Kay - Sol Kroşe"
-- **Taktik Kombinasyonlar**: Savun-Saldır-Savun dizilimleri
+#### 🎯 Durumsal Çalışma
+Gerçek maç durumlarında eskiv ve karşı saldırı kombinasyonları:
+- **Tekli**: "Köşeye sıkıştın - Roll!", "Sıkıştın - Eğil!", "Yakın mesafe - Uppercut!"
+- **İkili**: "Eğil - Sol Kroşe", "Sağa kay - Sol Kroşe", "Köşeye sıkıştın - Sola kay"
+- **Üçlü**: "Eğil - Sol Kroşe - Sağ Direk", "Köşeye sıkıştın - Sola kay - Roll"
 
 ## 🛠️ Teknik Bilgiler
 
@@ -105,8 +105,8 @@ Uygulama tüm cihazlarda mükemmel çalışır:
 
 ### Profesyonel Antrenman
 - Kombinasyon ezberlemesi
-- Refleks antrenmanı
-- Eskiv tekniği geliştirme
+- Durumsal farkındalık geliştirme
+- Eskiv+saldırı koordinasyonu
 
 ## 🤝 Katkıda Bulunma
 
